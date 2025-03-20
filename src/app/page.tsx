@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        <Flex className="h-screen w-full">
+        <Flex className="h-screen w-full justify-center">
           <Todos />
         </Flex>
       </Provider>

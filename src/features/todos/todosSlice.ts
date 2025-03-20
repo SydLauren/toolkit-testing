@@ -4,11 +4,12 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 interface Todo {
   id: string;
   title: string;
+  dateCreated: number;
 }
 
 export const todosAdapter = createEntityAdapter({
   selectId: (todo: Todo) => todo.id,
-  sortComparer: (a, b) => a.title.localeCompare(b.title),
+  sortComparer: (a, b) => b.dateCreated - a.dateCreated,
 });
 
 export const todosSlice = createSlice({
